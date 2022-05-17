@@ -1,0 +1,58 @@
+{
+  "name": "ocr-weapp",
+  "version": "1.0.0",
+  "private": true,
+  "description": "安全免费的印刷字体识别工具、多语种识别支撑、微信云函数无数据缓存保障信息安全；零广告用完即走！",
+  "templateInfo": {
+    "name": "mobx",
+    "typescript": true,
+    "css": "less"
+  },
+  "scripts": {
+    "build:wefunc": "esbuild",
+    "dev:wefunc": "esbuild",
+    "build:weapp": "taro build --type weapp",
+    "dev:weapp": "npm run build:weapp -- --watch",
+    "fmt": "prettier --write '**/*.{ts,tsx,js,jsx,yml,yaml,less}'"
+  },
+  "browserslist": [
+    "last 3 versions",
+    "Android >= 4.1",
+    "ios >= 8"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@babel/runtime": "^7.7.7",
+    "@tarojs/components": "3.4.9",
+    "@tarojs/plugin-framework-react": "3.4.9",
+    "@tarojs/react": "3.4.9",
+    "@tarojs/runtime": "3.4.9",
+    "@tarojs/taro": "3.4.9",
+    "mobx": "^4.8.0",
+    "mobx-react": "^6.1.4",
+    "react": "^17.0.0",
+    "react-dom": "^17.0.0",
+    "wx-server-sdk": "^2.6.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.8.0",
+    "@tarojs/cli": "^3.4.9",
+    "@tarojs/mini-runner": "3.4.9",
+    "@tarojs/webpack-runner": "3.4.9",
+    "@types/react": "^17.0.2",
+    "@types/tesseract.js": "^2.0.0",
+    "@types/webpack-env": "^1.13.6",
+    "@typescript-eslint/eslint-plugin": "^5.20.0",
+    "@typescript-eslint/parser": "^5.20.0",
+    "babel-preset-taro": "3.4.9",
+    "eslint": "^8.12.0",
+    "eslint-config-taro": "3.4.9",
+    "eslint-plugin-import": "^2.12.0",
+    "eslint-plugin-react": "^7.8.2",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "prettier": "^2.6.2",
+    "stylelint": "9.3.0",
+    "typescript": "^4.1.0"
+  }
+}

@@ -1,0 +1,12 @@
+dist/
+deploy_versions/
+.temp/
+.rn_temp/
+.DS_Store
+
+# node
+node_modules/
+cloudfunctions/**/node_modules
+
+#
+**/*.traineddata

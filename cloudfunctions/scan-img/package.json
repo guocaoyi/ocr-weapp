@@ -1,0 +1,13 @@
+{
+  "name": "scan-img",
+  "version": "0.1.0",
+  "description": "云函数：扫描文件",
+  "main": "index.js",
+  "scripts": {},
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "tesseract.js": "^2.1.5",
+    "wx-server-sdk": "~2.6.1"
+  }
+}
