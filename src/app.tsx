@@ -1,6 +1,8 @@
 import Taro from '@tarojs/taro'
 import { Component } from 'react'
 
+import './app.less'
+
 /**
  * Taro App
  */

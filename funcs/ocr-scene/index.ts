@@ -1,10 +1,14 @@
-import cloud from 'wx-server-sdk'
+import * as cloud from 'wx-server-sdk'
 
 cloud.init({
   env: cloud.DYNAMIC_CURRENT_ENV.toString(),
 })
 
-// 云函数入口函数
+/**
+ *
+ * @param event
+ * @returns
+ */
 export const main = async (event: any) => {
   console.info(event?.key ?? '')
   try {

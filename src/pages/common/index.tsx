@@ -1,8 +1,8 @@
 import { Component } from 'react'
 import Taro from '@tarojs/taro'
-import { Button, View } from '@tarojs/components'
+import { Button } from '@tarojs/components'
 
-import config from '../../config'
+import Container from '../../components/layout/Container'
 
 import './index.less'
 
@@ -70,14 +70,16 @@ class Index extends Component {
 
   render() {
     return (
-      <View style={{ height: '100%', width: '100%', display: 'flow' }}>
-        <Button onClick={this.getFromMobile}>本地照片</Button>
-        <Button onClick={this.getFromSession}>微信聊天会话</Button>
-        <Button onClick={this.getFromSession}>微信聊天会话</Button>
-        <Button onClick={this.getFromSession}>微信聊天会话</Button>
-        <Button onClick={this.getFromSession}>微信聊天会话</Button>
-        <Button onClick={this.getFromSession}>微信聊天会话</Button>
-      </View>
+      <Container>
+        <>
+          <Button onClick={this.getFromMobile}>本地照片</Button>
+          {new Array(20).fill(1).map((_, index) => (
+            <Button key={index} onClick={this.getFromSession}>
+              微信聊天会话{index}
+            </Button>
+          ))}
+        </>
+      </Container>
     )
   }
 }

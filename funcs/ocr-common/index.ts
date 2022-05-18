@@ -1,6 +1,6 @@
-import cloud from 'wx-server-sdk'
+import * as cloud from 'wx-server-sdk'
 import { createWorker } from 'tesseract.js'
-import path from 'path'
+import * as path from 'path'
 
 cloud.init()
 const worker = createWorker({

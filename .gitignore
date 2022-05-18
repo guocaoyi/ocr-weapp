@@ -9,6 +9,7 @@ funcs/**/node_modules
 **/*.traineddata
 
 # build
+cloudfunctions
 dist/
 deploy_versions/
 .temp/

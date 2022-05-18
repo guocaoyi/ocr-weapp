@@ -1,6 +1,5 @@
 import React from 'react'
 import { View, ScrollView } from '@tarojs/components'
-import Taro from '@tarojs/taro'
 
 import './index.less'
 
@@ -23,20 +22,20 @@ export class Archive extends React.Component<Props, State> {
 
   // 从本地缓存中获取数据
   componentDidMount() {
-    console.info('call function')
-    Taro.cloud
-      .callFunction({
-        name: 'get-book-list',
-        data: {
-          $url: 'login',
-        },
-      })
-      .then((res: any) => {
-        console.log('res>>>>', res)
-        this.setState({
-          books: JSON.stringify(res?.result ?? {}),
-        })
-      })
+    // console.info('call function')
+    // Taro.cloud
+    //   .callFunction({
+    //     name: 'get-book-list',
+    //     data: {
+    //       $url: 'login',
+    //     },
+    //   })
+    //   .then((res: any) => {
+    //     console.log('res>>>>', res)
+    //     this.setState({
+    //       books: JSON.stringify(res?.result ?? {}),
+    //     })
+    //   })
   }
 
   // 在页面中使用 Taro.setNavigationBarTitle 支持传入 React Component

@@ -7,10 +7,10 @@ export default defineAppConfig({
     'pages/help/index', // 帮助页
   ],
   window: {
-    backgroundTextStyle: 'light',
     navigationBarBackgroundColor: '#fff',
     navigationBarTitleText: 'WeChat',
     navigationBarTextStyle: 'black',
+    backgroundTextStyle: 'light',
   },
   tabBar: {
     color: '#d9d9d9',
