@@ -3,3 +3,5 @@
 cloudfunctions
 config
 /dist
+
+babel.config.js

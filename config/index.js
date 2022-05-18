@@ -1,8 +1,9 @@
-const path = require('path')
-
 const config = {
+  env: {
+    NODE_ENV: `${process.env.NODE_ENV ?? 'development'}`,
+  },
   projectName: 'ocr-weapp',
-  date: '2022-5-16',
+  date: '2022-5-17',
   designWidth: 750,
   deviceRatio: {
     640: 2.34 / 2,
@@ -16,10 +17,6 @@ const config = {
   copy: {
     patterns: [],
     options: {},
-  },
-  alias: {
-    '@config/*': path.resolve(__dirname, '..', './src/config/*'),
-    '@models/*': path.resolve(__dirname, '..', './src/models/*'),
   },
   framework: 'react',
   mini: {
@@ -45,9 +42,4 @@ const config = {
   },
 }
 
-module.exports = function (merge) {
-  if (process.env.NODE_ENV === 'development') {
-    return merge({}, config, require('./dev'))
-  }
-  return merge({}, config, require('./prod'))
-}
+module.exports = (merge) => config

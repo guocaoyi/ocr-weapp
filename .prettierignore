@@ -1,10 +1,11 @@
+# os
+.DS_Store
 .git
-dist
+
+# node
 node_modules
 
-# Ignore artifacts:
+# build out
+dist
+lib
 build
-coverage
-
-# Ignore all HTML files:
-*.html

@@ -1,10 +1,10 @@
-const cloud = require('wx-server-sdk')
-const { createWorker } = require('tesseract.js')
-const path = require('path')
+import cloud from 'wx-server-sdk'
+import { createWorker } from 'tesseract.js'
+import path from 'path'
 
 cloud.init()
 const worker = createWorker({
-  // langPath: path.join(__dirname, '.', 'lang-data'),
+  langPath: path.join(__dirname, '.', 'lang-data'),
   logger: (m) => console.log(m),
 })
 
@@ -18,8 +18,12 @@ const worker = createWorker({
   await worker.initialize('chi_sim')
 })()
 
-// 云函数入口函数
-exports.main = async (event, context) => {
+/**
+ * 通用型 OCR 识别（基于 tesseract.js）
+ * @param {*} event
+ * @param {*} context
+ */
+export const main = async (event: unknown) => {
   console.time('get wx context')
   const wxContext = cloud.getWXContext()
   console.timeEnd('get wx context')
@@ -43,3 +47,5 @@ exports.main = async (event, context) => {
     text,
   }
 }
+
+export default { main }

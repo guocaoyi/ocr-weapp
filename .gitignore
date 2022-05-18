@@ -1,12 +1,15 @@
-dist/
-deploy_versions/
-.temp/
-.rn_temp/
+# os
 .DS_Store
 
 # node
 node_modules/
-cloudfunctions/**/node_modules
+funcs/**/node_modules
 
 #
 **/*.traineddata
+
+# build
+dist/
+deploy_versions/
+.temp/
+.rn_temp/

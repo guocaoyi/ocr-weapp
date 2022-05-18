@@ -1,7 +1,5 @@
-import { theme } from '@config/constant'
-
 export default definePageConfig({
-  navigationBarBackgroundColor: theme.primary,
+  navigationBarBackgroundColor: '#391085',
   navigationBarTextStyle: 'white',
   navigationBarTitleText: '说明',
 })

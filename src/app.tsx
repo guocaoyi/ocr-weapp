@@ -2,21 +2,18 @@ import Taro from '@tarojs/taro'
 import { Component } from 'react'
 
 /**
- * App
+ * Taro App
  */
 class App extends Component {
   componentDidMount() {
     Taro?.cloud?.init?.({
-      env: 'test-0gkc9qyxe8fbe98a', // test
+      env: 'test-0gkc9qyxe8fbe98a', // cloud env
       traceUser: true,
     })
   }
 
-  componentDidCatchError() {
-    //
-  }
+  componentDidCatchError() {}
 
-  // this.props.children 就是要渲染的页面
   render() {
     return <>{this.props.children}</>
   }

@@ -1,5 +1,5 @@
 {
-  "name": "scan-img",
+  "name": "ocr-common",
   "version": "0.1.0",
   "description": "云函数：扫描文件",
   "main": "index.js",
