@@ -2,9 +2,7 @@ import { Component } from 'react'
 import Taro from '@tarojs/taro'
 import { Button } from '@tarojs/components'
 
-import Container from '../../components/layout/Container'
-
-import './index.less'
+import { Layout } from '../../components/layout'
 
 type PageStateProps = {
   store: {
@@ -70,16 +68,13 @@ class Index extends Component {
 
   render() {
     return (
-      <Container>
+      <Layout>
         <>
           <Button onClick={this.getFromMobile}>本地照片</Button>
-          {new Array(20).fill(1).map((_, index) => (
-            <Button key={index} onClick={this.getFromSession}>
-              微信聊天会话{index}
-            </Button>
-          ))}
+          <Button onClick={this.getFromSession}>微信聊天会话1</Button>
+          <Button onClick={this.getFromSession}>微信聊天会话2</Button>
         </>
-      </Container>
+      </Layout>
     )
   }
 }

@@ -1,24 +1,48 @@
 import Taro from '@tarojs/taro'
 import { Component } from 'react'
+import { css } from 'linaria'
 
-import './app.less'
+import type { Response } from 'cloud-web-api'
+
+import { Layout } from './components/layout'
+import { WX_CLOUD_ENV, theme } from './config'
 
 /**
- * Taro App
+ * Taro Main Component(entry)
  */
-class App extends Component {
+export class App extends Component {
   componentDidMount() {
     Taro?.cloud?.init?.({
-      env: 'test-0gkc9qyxe8fbe98a', // cloud env
+      env: WX_CLOUD_ENV,
       traceUser: true,
     })
   }
 
-  componentDidCatchError() {}
+  componentDidCatchError() {
+    const a: Response = {
+      errcode: '-1',
+      errmsg: '',
+    }
+    console?.info?.(a)
+  }
 
   render() {
-    return <>{this.props.children}</>
+    return <Layout className={globals}>{this.props.children}</Layout>
   }
 }
+
+export const globals = css`
+  :global() {
+    :root {
+      --primary: ${theme.primary};
+      --bgColor: ${theme.bgColor};
+    }
+
+    page {
+      height: 100%;
+      display: flex;
+    }
+  }
+`
 
 export default App

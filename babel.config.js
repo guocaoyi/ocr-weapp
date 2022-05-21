@@ -9,5 +9,6 @@ module.exports = {
         ts: true,
       },
     ],
+    'linaria/babel',
   ],
 }

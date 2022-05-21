@@ -1,6 +1,6 @@
 {
   "name": "ocr-common",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "云函数：扫描文件",
   "main": "index.js",
   "scripts": {},

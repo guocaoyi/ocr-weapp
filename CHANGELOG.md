@@ -9,14 +9,18 @@
   5、版本时间戳遵守 yyyy.MM.dd 格式，且标识版本 Release 时间；且按时间倒序编写；
 ```
 
+## 0.1.2 [2022.05.19]
+
+- perf: use css-in-js lib linaria replace less
+
 ## 0.1.1 [2022.05.18]
 
-- feat: add common components\layout\nav
-- feat: add format
-- feat: add Funcs folders(use tsc build to cloudfunctions folders)
+- feat: common components\layout\nav
+- feat: format & lint
+- remove: cloudfunctions folders(use tsc build ./funcs to replace)
 
 ## 0.1.0 [2022.05.17]
 
 - feat: taro init
-- feat: create wx cloud functions
 - feat: add pages(archive\common\detail\help\index)
+- feat: create wx cloud functions

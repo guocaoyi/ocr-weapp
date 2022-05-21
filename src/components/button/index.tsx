@@ -1,18 +1,17 @@
-import { Component } from 'react'
 import { View } from '@tarojs/components'
+import { styled } from 'linaria/react'
 
-import './index.less'
+import type { FC } from 'react'
 
-type PageStateProps = {}
-
-interface Button {
-  props: PageStateProps
+/**
+ * 重写 @tarojs/component Button 样式
+ */
+export const Button: FC<unknown> = () => {
+  return <Container></Container>
 }
 
-class Button extends Component {
-  render() {
-    return <View className='container'></View>
-  }
-}
+const Container = styled(View)`
+  padding: 0%;
+`
 
 export default Button

@@ -1,14 +1,12 @@
 {
   "name": "ocr-weapp",
-  "version": "1.0.0",
+  "version": "0.1.2",
   "private": true,
+  "author": "Yalda",
+  "license": "MIT",
   "description": "安全免费的印刷字体识别工具、多语种识别支撑、微信云函数无数据缓存保障信息安全；零广告用完即走！",
-  "templateInfo": {
-    "typescript": true,
-    "css": "less"
-  },
   "scripts": {
-    "fmt": "prettier --write '**/*.{ts,tsx,js,yml,yaml,less}'",
+    "fmt": "prettier --write '**/*.{ts,tsx,js,yml,yaml,json}'",
     "build:func": "tsc -p tsconfig.func.json && copyfiles -u 1 funcs/**/*.json ./cloudfunctions",
     "build:weapp": "taro build --type weapp",
     "dev:weapp": "npm run build:weapp -- --watch",
@@ -18,8 +16,6 @@
     "last 3 versions",
     "ios >= 8"
   ],
-  "author": "Yalda",
-  "license": "MIT",
   "dependencies": {
     "@babel/runtime": "^7.7.7",
     "@tarojs/components": "3.4.9",
@@ -27,6 +23,7 @@
     "@tarojs/react": "3.4.9",
     "@tarojs/runtime": "3.4.9",
     "@tarojs/taro": "3.4.9",
+    "linaria": "^2.3.1",
     "react": "^17.0.0",
     "react-dom": "^17.0.0"
   },

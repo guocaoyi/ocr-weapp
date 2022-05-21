@@ -1,103 +1,64 @@
-import React from 'react'
-import { View, ScrollView } from '@tarojs/components'
+import React, { PropsWithChildren } from 'react'
+import VirtualList from '@tarojs/components/virtual-list'
+import { View } from '@tarojs/components'
 
-import './index.less'
+import { Layout } from '../../components/layout'
 
-interface Props {}
+interface Props extends PropsWithChildren<any> {}
 interface State {
-  books: string
+  data: number[]
 }
 
 /**
  * 归档
  */
 export class Archive extends React.Component<Props, State> {
-  constructor(props) {
-    super(props)
-    this.state = {
-      books: '',
-    }
-  }
-  componentWillMount() {}
-
-  // 从本地缓存中获取数据
-  componentDidMount() {
-    // console.info('call function')
-    // Taro.cloud
-    //   .callFunction({
-    //     name: 'get-book-list',
-    //     data: {
-    //       $url: 'login',
-    //     },
-    //   })
-    //   .then((res: any) => {
-    //     console.log('res>>>>', res)
-    //     this.setState({
-    //       books: JSON.stringify(res?.result ?? {}),
-    //     })
-    //   })
+  state = {
+    data: new Array(100).fill(0).map((_, i) => i + 0),
   }
 
-  // 在页面中使用 Taro.setNavigationBarTitle 支持传入 React Component
-  componentWillUnmount() {}
+  /**
+   * 更新最新的数据
+   */
+  onScrollToUpper = () => {
+    console.log('onScrollToUpper')
+  }
 
-  // Page on show
-  componentDidShow() {}
-
-  //
-  componentDidHide() {}
-
-  onScrollToUpper() {}
-
-  // or 使用箭头函数
-  // onScrollToUpper = () => {}
-
-  onScroll(e) {
-    console.log(e.detail)
+  /**
+   * 下一页（默认请求50条数据）
+   */
+  onScrollToLower = () => {
+    console.log('onScrollToLower')
   }
 
   render() {
-    const scrollTop = 0
-    const Threshold = 20
+    const { data } = this.state
+    const dataLen = data.length
+
+    const Row = React.memo<any>(({ id, index, style }) => {
+      return (
+        <View
+          id={id}
+          className={index % 2 ? 'ListItemOdd' : 'ListItemEven'}
+          style={style}
+        >
+          Row {index}
+        </View>
+      )
+    })
 
     return (
-      <ScrollView
-        scrollX={false}
-        scrollY
-        scrollWithAnimation
-        scrollTop={scrollTop}
-        style={{ height: 150 }}
-        lowerThreshold={Threshold}
-        upperThreshold={Threshold}
-        onScrollToUpper={this.onScrollToUpper.bind(this)} // 使用箭头函数的时候 可以这样写 `onScrollToUpper={this.onScrollToUpper}`
-        onScroll={this.onScroll}
-      >
-        <View
-          style={{
-            height: '150px',
-            backgroundColor: 'rgb(26, 173, 25)',
-          }}
+      <Layout>
+        <VirtualList
+          height={500}
+          width='100%'
+          itemData={data}
+          itemCount={dataLen}
+          itemSize={100}
         >
-          {this.state.books ?? 'xxxx'}
-        </View>
-        <View
-          style={{
-            height: '150px',
-            backgroundColor: 'rgb(39,130,215)',
-          }}
-        >
-          B
-        </View>
-        <View
-          style={{
-            height: '150px',
-            backgroundColor: 'rgb(241,241,241)',
-            color: '#333',
-          }}
-        >
-          C
-        </View>
-      </ScrollView>
+          {Row}
+        </VirtualList>
+      </Layout>
     )
   }
 }

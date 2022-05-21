@@ -17,5 +17,5 @@
     "rootDir": "./funcs",
     "typeRoots": ["node_modules/@types"]
   },
-  "include": ["./funcs", "./funcs/**/*.json"]
+  "include": ["./funcs", "typings"]
 }

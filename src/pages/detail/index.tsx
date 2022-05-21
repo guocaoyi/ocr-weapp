@@ -1,49 +1,32 @@
 import React from 'react'
-import { View, ScrollView } from '@tarojs/components'
+import { View, Text, ScrollView } from '@tarojs/components'
+import { css } from 'linaria'
+
+import { theme } from '../../config'
 
 /**
  * Detail Page
- * @returns
  */
 export class Detail extends React.Component {
-  onScrollToUpper() {}
-
-  // or 使用箭头函数
-  // onScrollToUpper = () => {}
+  onScrollToUpper = () => {}
 
   onScroll(e) {
     console.log(e.detail)
   }
 
   render() {
-    const scrollStyle = {
-      height: '150px',
-    }
     const scrollTop = 0
     const Threshold = 20
-    const vStyleA = {
-      height: '150px',
-      'background-color': 'rgb(26, 173, 25)',
-    }
-    const vStyleB = {
-      height: '150px',
-      'background-color': 'rgb(39,130,215)',
-    }
-    const vStyleC = {
-      height: '150px',
-      'background-color': 'rgb(241,241,241)',
-      color: '#333',
-    }
+
     return (
       <ScrollView
-        className='scrollview'
+        className={scrollStyle}
         scrollY
         scrollWithAnimation
         scrollTop={scrollTop}
-        style={scrollStyle}
         lowerThreshold={Threshold}
         upperThreshold={Threshold}
-        onScrollToUpper={this.onScrollToUpper.bind(this)} // 使用箭头函数的时候 可以这样写 `onScrollToUpper={this.onScrollToUpper}`
+        onScrollToUpper={this.onScrollToUpper}
         onScroll={this.onScroll}
       >
         <View style={vStyleA}>A</View>
@@ -53,5 +36,25 @@ export class Detail extends React.Component {
     )
   }
 }
+
+const scrollStyle = css`
+  height: 100%;
+  color: ${theme.fontColor};
+  background-color: ${theme.bgColor};
+`
+
+const vStyleA = css`
+  height: 10rem;
+  background-color: rgb(26, 173, 25);
+`
+const vStyleB = css`
+  height: 10rem;
+  background-color: rgb(39, 130, 215);
+`
+const vStyleC = css`
+  height: 10rem;
+  background-color: rgb(241, 241, 241);
+  color: #333;
+`
 
 export default Detail

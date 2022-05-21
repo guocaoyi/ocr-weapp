@@ -1,6 +1,5 @@
 export default definePageConfig({
-  disableScroll: false,
-  navigationBarTitleText: '归档',
-  navigationBarBackgroundColor: '#391085',
+  disableScroll: true,
+  navigationStyle: 'custom',
   navigationBarTextStyle: 'white',
 })

@@ -2,10 +2,11 @@
 .DS_Store
 
 # node
+*.log
 node_modules/
 funcs/**/node_modules
 
-#
+# tesseract
 **/*.traineddata
 
 # build

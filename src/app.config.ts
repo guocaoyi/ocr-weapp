@@ -1,21 +1,20 @@
 export default defineAppConfig({
   pages: [
-    'pages/index/index', // 场景
-    'pages/common/index', // 通用场景
-    'pages/archive/index', // 归档页
-    'pages/detail/index', // 详情页
-    'pages/help/index', // 帮助页
+    'pages/index/index',
+    'pages/common/index',
+    'pages/archive/index',
+    'pages/detail/index',
+    'pages/help/index',
   ],
   window: {
-    navigationBarBackgroundColor: '#fff',
-    navigationBarTitleText: 'WeChat',
+    navigationBarBackgroundColor: '#ffffff',
     navigationBarTextStyle: 'black',
     backgroundTextStyle: 'light',
   },
   tabBar: {
     color: '#d9d9d9',
     selectedColor: '#391085',
-    backgroundColor: '#fff',
+    backgroundColor: '#ffffff',
     borderStyle: 'white',
     list: [
       {
