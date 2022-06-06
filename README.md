@@ -2,6 +2,8 @@
 
 本应用 OCR 的能力基于微信开发平台接口提供，超出调用次数（100 次/天）时则改用 tesseract 进行解析。代码完全开源，且由微信云开发（云函数）托管，不保留任何用户数据。
 
+OCR-WEAPP 不会向任何类型的后端服务发送任何用户数据
+
 ## Previews
 
 |  ![](./docs/pages-scene.png)  | ![](./docs/pages-common.png) | ![](./docs/pages-archive.png) | ![](./docs/pages-archive.png) |

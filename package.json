@@ -7,7 +7,7 @@
   "description": "安全免费的印刷字体识别工具、多语种识别支撑、微信云函数无数据缓存保障信息安全；零广告用完即走！",
   "scripts": {
     "fmt": "prettier --write '**/*.{ts,tsx,js,yml,yaml,json}'",
-    "build:func": "tsc -p tsconfig.func.json && copyfiles -u 1 funcs/**/*.json ./cloudfunctions",
+    "build:func": "copyfiles -u 1 funcs/**/*.json ./cloudfunctions && tsc -p tsconfig.func.json",
     "build:weapp": "taro build --type weapp",
     "dev:weapp": "npm run build:weapp -- --watch",
     "release:weapp": "NODE_ENV=production taro build --type weapp"
